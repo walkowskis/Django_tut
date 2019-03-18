@@ -1,11 +1,33 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
+# some data, as dictionaries:
+posts = [
+    {
+        'author': 'Typ',
+        'title': 'Blog post 1',
+        'content': 'Random stuff bleee',
+        'date_posted': '01.01.2019'
+    },
+    {
+        'author': 'Typ2',
+        'title': 'Blog post 2',
+        'content': 'Random stuff bleee bleee',
+        'date_posted': '01.02.2019'
+    }
+]
 
 # Create your views here.
+
+
 def home(request):
-    return HttpResponse('<h1>Blog Home</h1>')
+    contex = {
+        'posts': posts
+    }
+    # to add html template:
+    return render(request, 'blog/home.html', contex)
+
+# simple pass dictionary as argument to set title in about pages
 
 
 def about(request):
-    return HttpResponse('<h1>Blog About</h1>')
+    return render(request, 'blog/about.html', {'title': 'About'})
