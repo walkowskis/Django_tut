@@ -1,27 +1,10 @@
 from django.shortcuts import render
-
-# some data, as dictionaries:
-posts = [
-    {
-        'author': 'Typ',
-        'title': 'Blog post 1',
-        'content': 'Random stuff bleee',
-        'date_posted': '01.01.2019'
-    },
-    {
-        'author': 'Typ2',
-        'title': 'Blog post 2',
-        'content': 'Random stuff bleee bleee',
-        'date_posted': '01.02.2019'
-    }
-]
-
-# Create your views here.
+from .models import Post
 
 
 def home(request):
     contex = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     # to add html template:
     return render(request, 'blog/home.html', contex)
