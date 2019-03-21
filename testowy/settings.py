@@ -126,3 +126,9 @@ STATIC_URL = '/static/'
 
 # which template/bootstrap to USE
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# redirect to home website after login, except to user profile
+LOGIN_REDIRECT_URL = 'blog-home'
+
+# tell where login route is
+LOGIN_URL = 'login'
