@@ -124,6 +124,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# where uploaded file will be save
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 # which template/bootstrap to USE
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
