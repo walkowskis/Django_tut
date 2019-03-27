@@ -9,6 +9,8 @@
         <p>{{ post.content }}</p>
         <br> -->
         <article class="media content-section">
+            <!-- to display profile img near the post -->
+            <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" alt="Profile Img">
           <div class="media-body">
             <div class="article-metadata">
               <a class="mr-2" href="#">{{ post.author }}</a>
