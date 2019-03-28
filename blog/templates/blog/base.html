@@ -23,7 +23,9 @@
     </head>
     <body>
         <header class="site-header">
-        <!-- navigation bar -->
+        <!--
+        navigation bar
+        -->
           <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
               <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
@@ -37,7 +39,9 @@
                 </div>
                 <!-- Navbar Right Side -->
                 <div class="navbar-nav">
+                <!-- only for log in users: -->
                   {% if user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
                     <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                     <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                   {% else %}
