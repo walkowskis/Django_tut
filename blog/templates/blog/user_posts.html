@@ -1,13 +1,9 @@
 <!-- to put it into block content -->
 {% extends "blog/base.html" %}
 {% block content %}
+    <h1 class="mb-3">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
     <!-- for loop to access -->
     {% for post in posts %}
-        <!-- print out this content: -->
-        <!-- <h1>{{ post.title }}</h1>
-        <p>By {{ post.author }} on {{ post.date_posted }}</p>
-        <p>{{ post.content }}</p>
-        <br> -->
         <article class="media content-section">
             <!-- to display profile img near the post -->
             <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" alt="Profile Img">
